@@ -55,7 +55,8 @@ C:\Users\XXXXX\Documents\Arduino\libraries
 Download zip file from here
 https://github.com/LowPowerLab/LowPower
 Unzip
-copy LowPower-master to ......./Arduino/libraries
+copy LowPower-master to
+C:\Users\XXXXX\Documents\Arduino\libraries
 
 Restart Arduino IDE
 

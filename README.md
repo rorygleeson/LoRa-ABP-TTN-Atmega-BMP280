@@ -9,9 +9,9 @@ LMIC library by matthijskooijman.
 Sensor is GY BME/P280     (BMP280 with Temperature, Height and Pressure) 
 This setup assumes the BMP280 will operate in I2C mode (and not SPI). 
 
-MALE SURE TO FOLLOW ALL STEPS
+MAKE SURE TO FOLLOW ALL STEPS
 
-For both the Lora dev boards (BSFrance/Adafruit),  Connect Pin 6 and IO1  together (required for LMIC LoRa library).
+On your LoRa dev board Connect Pin 6 and IO1  together (required for LMIC LoRa library).  
 
 Wire up BMP280 as follows for I2C mode:
 
@@ -89,6 +89,11 @@ Note: To fit the program onto the chip, most print statements are commented out.
 (There are ways to reduce memory usage but I have not tested, by disabling some features in config.h (like beacon tracking and ping slots, which are not typically needed), some space can be freed up. )
 
 Verify data is received in TTN. 
+
+To do:
+
+1) Check status of BMP280 sensor when Atmega is in sleep mode. I think this may need to be put to sleep. 
+2) Clean up config (defined(CFG_eu868) change to AU915 and verify frequencies. I have set them all to 915 since using single channel gateway. Seems to work fine, but probably not the best setup. 
 
 
 

@@ -34,6 +34,7 @@ In TTN, create an application and add a device. In device settings change mode t
 - App Session Key
 - Device Addres
 
+Important: In the device setting page, disable "Frame Counter Checks", as code does not handle this at the moment.  
 
 In Arduino IDE
 =============================

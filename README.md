@@ -5,8 +5,11 @@ ATmega32u4
 BSFrance LoRa32u4 and Adafruit Feather 32u4 LoRa Radio (RFM9x) both work and have been tested.
 Tested with single channel Dragino gateway, connected to TTN. 
 ABP mode. 
+LMIC library by matthijskooijman. 
 Sensor is GY BME/P280     (BMP280 with Temperature, Height and Pressure) 
 This setup assumes the BMP280 will operate in I2C mode (and not SPI). 
+
+MALE SURE TO FOLLOW ALL STEPS
 
 For both the Lora dev boards (BSFrance/Adafruit),  Connect Pin 6 and IO1  together (required for LMIC LoRa library).
 
@@ -21,7 +24,18 @@ CSB : no connection
 SD0 : no connection
 
 
+TTN console
+=============================
+Create an account in TTN. 
+In TTN, create an application and add a device. In device settings change mode to ABP. Save. Make a note of the following three parameters for this device. These will later be programmed onto the chip. 
 
+- Network Session Key
+- App Session Key
+- Device Addres
+
+
+In Arduino IDE
+=============================
 After you have downloaded and installed the latest version of Arduino IDE, you will need to start the IDE and navigate to the Preferences menu.
 
 Add a URL to the new Additional Boards Manager URLs option.
@@ -29,8 +43,6 @@ Add a URL to the new Additional Boards Manager URLs option.
 https://adafruit.github.io/arduino-board-index/package_adafruit_index.json
 
 Once the Board Manager opens, click on the category drop down menu on the top left hand side of the window and select Contributed.  Install "Adafruit AVR Boards" 
-
-
 
 
 Install windows adafruit drivers...(not sure if necessary). Drivers here: https://github.com/adafruit/Adafruit_Windows_Drivers/releases/tag/2.3.1
@@ -60,5 +72,23 @@ C:\Users\XXXXX\Documents\Arduino\libraries
 
 Restart Arduino IDE
 
+Copy the provided code (Lora-ABP-TTN-BMP280) into Arduino IDE and save as a new program. 
+Modify the provided code and update 3 parameters.
 
-Compile and upload code
+- LoRaWAN NwkSKey, network session key
+- LoRaWAN AppSKey, application session key
+- LoRaWAN end-device address (DevAddr)
+
+Replace them with the values copied from TTN. 
+
+In Arduino ensure Board is set to Adafruit Feather 32u4 (works fine for BSFrance also)
+
+Compile and upload the code. 
+
+Note: To fit the program onto the chip, most print statements are commented out. Can only have a few enabled at a given time. 
+(There are ways to reduce memory usage but I have not tested, by disabling some features in config.h (like beacon tracking and ping slots, which are not typically needed), some space can be freed up. )
+
+Verify data is received in TTN. 
+
+
+

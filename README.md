@@ -1,4 +1,4 @@
-"# LoRa-ABP-TTN-Atmega-BMP280" 
+"# LoRa-ABP-TTN-Atmega32u4-BMP280" 
 
 ATmega32u4
 

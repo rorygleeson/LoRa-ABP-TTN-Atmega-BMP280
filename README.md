@@ -6,6 +6,7 @@ BSFrance LoRa32u4 and Adafruit Feather 32u4 LoRa Radio (RFM9x) both work and hav
 Tested with single channel Dragino gateway, connected to TTN. 
 ABP mode. 
 LMIC library by matthijskooijman. 
+Sleep mode of Atmega32u4 also used to save battery life. 
 Sensor is GY BME/P280     (BMP280 with Temperature, Height and Pressure) 
 This setup assumes the BMP280 will operate in I2C mode (and not SPI). 
 

@@ -23,14 +23,14 @@ On your LoRa dev board Connect Pin 6 and IO1  together (required for LMIC LoRa l
 
 Wire up BMP280 as follows for I2C mode:
 
-BMP280 : Atmega
-VCC : 3V
-GND : GND
-SCL : 3
-SDA : 2
-CSB : no connection
-SD0 : no connection
-
+BMP280 : Atmega  
+VCC : 3V  
+GND : GND  
+SCL : 3  
+SDA : 2  
+CSB : no connection  
+SD0 : no connection  
+  
 
 TTN console
 =============================
